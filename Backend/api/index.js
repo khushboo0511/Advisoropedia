@@ -24,11 +24,11 @@ server.get("/", (req, res) => {
     });
 });
 
-// Auth Routes
+// // Auth Routes
 server.use("/api/auth", authRoutes);
 
-// Posts Routes
-server.use("/api/post", postsRoutes);
+// // Posts Routes
+// server.use("/api/post", postsRoutes);
 
 server.listen(PORT, () => {
     console.log(`App is running at port ${PORT}`);

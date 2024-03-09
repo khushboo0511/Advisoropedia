@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,13 +12,14 @@ const Navbar = () => {
             <img
               src="https://advisoropedia.in/wp-content/uploads/2024/02/cropped-White-Transparent.png"
               alt=""
-              height={104}
-              width={150}
+              height={200}
+              width={200}
             />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex text-sm text-slate-100">
+        <div>
+          <ul className="flex text-base font-semibold text-slate-100">
             <li className="popup-text px-3 cursor-pointer hover:text-white ">
               <a>Home</a>
             </li>
@@ -32,6 +34,23 @@ const Navbar = () => {
               <a>Contact Us</a>
             </li>
           </ul>
+
+          </div>
+          <div>
+
+          <a
+            className="btn btn-sm rounded-lg px-2 text-xl font-semibold bg-slate-300 text-black border-transparent hover:bg-slate-700 hover:text-white hover:border-transparent"
+            onClick={() => navigate("/signin")}
+          >
+            Sign In
+          </a>
+          <a
+            className="btn btn-sm rounded-lg px-2 text-xl font-semibold bg-red-500 text-black border-transparent hover:bg-slate-700 hover:text-white hover:border-transparent"
+            onClick={() => navigate("/signup")}
+          >
+            Sign Up
+          </a>
+          </div>
         </div>
 
         <div className="navbar-end">
@@ -56,36 +75,9 @@ const Navbar = () => {
                 />
               </svg>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li className="popup-text px-3 cursor-pointer  ">
-                <a>Home</a>
-              </li>
-              <li className="popup-text px-3 cursor-pointer  ">
-                <a>About</a>
-              </li>
-              <li className="popup-text px-3 cursor-pointer  ">
-                <a>What We Do</a>
-              </li>
-              <li className="popup-text px-3 cursor-pointer  ">
-                <a>Contact Us</a>
-              </li>
-            </ul>
+            
           </div>
-          <a
-            className="btn btn-ghost mr-2 text-slate-100 hover:text-slate-700 hover:bg-transparent"
-            onClick={() => navigate("/signin")}
-          >
-            Sign In
-          </a>
-          <a
-            className="btn btn-sm bg-slate-300 text-black border-transparent hover:bg-slate-700 hover:text-white hover:border-transparent"
-            onClick={() => navigate("/signup")}
-          >
-            Sign Up
-          </a>
+          
         </div>
       </div>
     </>

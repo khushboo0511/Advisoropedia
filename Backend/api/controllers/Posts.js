@@ -1,5 +1,6 @@
 const express = require("express");
 const imageUpload = require("../utils/imageUpload");
+
 const Post = require("../models/Post");
 
 const createPost = async (req, res) => {
@@ -65,4 +66,4 @@ const getAllPosts = async (req, res) => {
     }
 };
 
-module.exports = { createPost, getAllPosts };
+module.exports = {getAllPosts,createPost};

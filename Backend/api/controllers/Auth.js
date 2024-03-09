@@ -58,7 +58,7 @@ const signUp = async (req, res) => {
             _id: newUser._id,
         };
 
-        const token = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "7d"});
+        const token = jwt.sign(payload, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c, {expiresIn: "7d"});
 
         return res.status(200).json({
             success: true,
