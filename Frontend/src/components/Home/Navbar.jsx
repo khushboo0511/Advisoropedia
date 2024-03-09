@@ -6,6 +6,7 @@ const Navbar = () => {
 
   return (
     <>
+
       <div className="nav navbar bg-transparent px-8 mx-auto w-11/12">
         <div className="navbar-start">
           <a className="cursor-pointer">
@@ -40,9 +41,9 @@ const Navbar = () => {
 
           <a
             className="btn btn-sm rounded-lg px-2 text-xl font-semibold bg-slate-300 text-black border-transparent hover:bg-slate-700 hover:text-white hover:border-transparent"
-            onClick={() => navigate("/signin")}
+            onClick={() => navigate("/login")}
           >
-            Sign In
+            Log In
           </a>
           <a
             className="btn btn-sm rounded-lg px-2 text-xl font-semibold bg-red-500 text-black border-transparent hover:bg-slate-700 hover:text-white hover:border-transparent"

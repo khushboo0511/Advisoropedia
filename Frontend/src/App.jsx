@@ -1,31 +1,43 @@
-import "./App.css";
-import { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./components/homepage/Homepage";
-import SignUpPage from "./components/signup/SignUpPage";
-import SignInPage from "./components/signin/SignInPage";
-
-const PostPage = lazy(() => import("./components/posts/PostPage"));
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Login from './components/Authentication/Login';
+import Signup from './components/Authentication/Signup';
+import AllPosts from './components/Posts/AllPosts';
+import Error from './components/Error/Error';
+import ProtectedRoute from './components/Authentication/ProtectedRoute';
+import OpenRoute from './components/Authentication/OpenRoute';
+import Homepage from './components/Home/Homepage';
+import { Suspense } from 'react';
 
 function App() {
   return (
-    <>
+    <div className="w-screen min-h-screen bg-blueWhite text-slate-600 overflow-x-hidden">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route
-            path="/posts"
-            element={
+      <Routes>
+        {/* Home path */}
+      <Route path="/" element={<Homepage />} />
+
+        <Route path="/login" element={<OpenRoute />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
+        {/* Home path */}
+        <Route path="/signup" element={<OpenRoute />}>
+          <Route path='/signup' element={<Signup />} />
+        </Route>
+        {/* Home path */}
+        <Route path="/posts" element={<ProtectedRoute />}>
+          <Route path='/posts' element={
               <Suspense fallback={"Loading . . . . . . . "}>
-                <PostPage />
+                <AllPosts />
               </Suspense>
-            }
-          />
-        </Routes>
+            } />
+        </Route>
+
+        {/* All Paths */}
+        <Route path='*' element={<Error />} />
+      </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

@@ -2,7 +2,7 @@ const Title = ({ description }) => {
     return (
       <>
         <img
-          className="mt-2"
+          className="mt-2 justify-center"
           src="https://advisoropedia.in/wp-content/uploads/2024/02/cropped-White-Transparent.png"
           alt=""
           height={104}

@@ -4,7 +4,11 @@ const postsRoutes = require('./routes/postsRoutes');
 const dbConnect = require('./config/database');
 const cloudinaryConnect = require('./config/cloudinary');
 const cors = require('cors');
+
+
 require('dotenv').config();
+
+
 
 dbConnect();
 cloudinaryConnect();
